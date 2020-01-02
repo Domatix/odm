@@ -8,7 +8,7 @@ by calling `cnt -c [CONTAINER] [REPO] [BRANCH]`
 cnt -c odoo12 repos 12.0
 ```
 
-## how to create a repo
+## how to create a repo script
 
 1. copy the template script
 
