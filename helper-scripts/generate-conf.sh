@@ -4,7 +4,7 @@
 
 cd ~/custom
 addons=$(cd addons; ls -l | awk '{print $9}') 
-if [ -f etc/odoo.tmp.conf ];
+if [[ -f etc/odoo.tmp.conf ]];
 then
 	rm etc/odoo.tmp.conf
 fi

@@ -6,7 +6,7 @@ pure bash docker-compose frontend for managing Odoo development instances
 - this will install an executable in `/usr/bin/` called `cnt`; before installing check that it doesn't conflict with your system configuration. regarding docker,
 a `domatix/odoo:base` image will be installed; you also need to check that this does not conflict with your current system configuration.
 
-- this document explains the basic installation and update steps. if you want to know the ins and outs for this program, check the dev documentation @ the [wiki](https://github.com/Domatix/odm/wiki)
+- this document explains the basic installation and update steps. if you want to know the script's  ins and outs, check the development [documentation](https://github.com/Domatix/odm/wiki)
 
 
 ## install
