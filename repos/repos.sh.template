@@ -1,0 +1,50 @@
+#!/bin/bash
+#### Description: addons clone helper script
+
+wd="$1"/custom/addons
+BRANCH="$2"
+
+declare -a repos
+repos=(
+	"https://my-git.com/repo.git -b $BRANCH"
+	"https://my-git/repo2.git"
+	"git@my-git/repo2.git"
+)
+
+
+
+declare -A credentials=(
+	["user"]='' 
+	["password"]=''
+)
+
+
+
+
+
+
+
+
+
+
+
+for repo in "${repos[@]}"
+do
+
+	expect <<- DONE
+		spawn git -C $wd clone $repo
+		expect "Username*:"
+		send -- "${credentials['user']}\r"
+		send -- "\r"
+		expect "Password*:"
+		send -- "${credentials['password']}\r"
+		expect eof
+	DONE
+done
+
+
+
+echo go to $wd to see your cloned repos
+
+
+

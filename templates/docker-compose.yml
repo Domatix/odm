@@ -1,0 +1,30 @@
+version: '3'
+services:
+        postgres:
+                image: postgres
+                environment: 
+                        POSTGRES_USER: odoo 
+                        POSTGRES_PASSWORD: odoo 
+                        POSTGRES_DB: postgres 
+        odoo:
+                build:
+                        context: ../../dockerfiles/custom/
+                        args: 
+                                - id=$id
+                                - odoo_version=$odoo_version
+                external_links:
+                        - postgres
+                depends_on:
+                        - postgres
+                container_name: $container_name
+                volumes:
+                        - $addons_path:/opt/odoo/custom/addons
+                        - $etc_path:/opt/odoo/custom/etc
+                        - $data_path:/opt/odoo/data
+
+                command: tail -f /dev/null
+                restart: on-failure
+                ports:
+                        - "$port:8069"
+                cap_add:  
+                    - SYS_PTRACE
