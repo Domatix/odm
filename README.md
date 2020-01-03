@@ -19,7 +19,7 @@ a `domatix/odoo:base` image will be installed; you also need to check that this 
 ### installation
 
 ```bash
-git clone https://gitlab.domatix.com/catalin/odoo-dev
+git clone https://github.com/Domatix/odm
 cd odoo-dev
 sudo make install # this will create the cnt executable
 ```
