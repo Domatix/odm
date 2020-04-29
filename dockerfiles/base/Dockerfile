@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND=noninteractive.
-ENV LANG C.UTF-8 
+ENV LANG C.UTF-8
 ENV TZ=Europe/Madrid
 RUN apt-get update -y
 RUN apt-get upgrade -y
@@ -11,7 +11,6 @@ RUN curl -o wkhtmltox.tar.xz -SL https://github.com/wkhtmltopdf/wkhtmltopdf/rele
 	&& tar xvf wkhtmltox.tar.xz \
 	&& cp wkhtmltox/lib/* /usr/local/lib/ \
 	&& cp wkhtmltox/bin/* /usr/local/bin/ \
-	&& cp -r wkhtmltox/share/man/man1 /usr/local/share/man/ 
-RUN npm install -g less less-plugin-clean-css 
-RUN pip3 install phonenumbers xmlsig workdays numpy
-
+	&& cp -r wkhtmltox/share/man/man1 /usr/local/share/man/
+RUN npm install -g less less-plugin-clean-css
+RUN pip3 install phonenumbers xmlsig workdays numpy unidecode zeep pyopenssl
