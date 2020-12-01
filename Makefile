@@ -7,8 +7,8 @@ install:
 	ln -s ${current_dir}/run.sh ${PREFIX}/cnt
 
 
-update_conf: $(current_dir)/containers/*
+update-conf: $(current_dir)/containers/*
 	for file in $^; do \
-		cp ${current_dir}/helper-scripts/* $${file}/custom ; \
+		cp ${current_dir}/helper-scripts/* $${file}/custom/etc ; \
 	done
 
