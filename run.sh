@@ -83,7 +83,7 @@ function parse_positional_arguments() {
 
   n | ne | new)
     shift
-    new "$1" "$2" "$3"
+    new "$1" "$2" "$3" "$4"
     ;;
 
   l | li | lis | list)
@@ -318,22 +318,18 @@ case "$1" in
   shift
   delete "$@"
   ;;
-
 -s | --start)
   shift
   start "$@"
   ;;
-
 -r | --run)
   shift
   run "$@"
   ;;
-
 -u | --update)
   shift
   update "$@"
   ;;
-
 -k | --kill)
 
   kill "$2"
@@ -346,7 +342,6 @@ case "$1" in
   fi
   docker exec -it "$1" su - "$user"
   ;;
-
 -l | --list)
   docker ps -a
   ;;
@@ -360,5 +355,4 @@ case "$1" in
     parse_positional_arguments "$@"
   fi
   ;;
-
 esac
