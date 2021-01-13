@@ -2,9 +2,7 @@
 #### Written by: Catalin Airimitoaie - catalin@domatix.com
 #### Description: Odoo execution script. Do not call this script directly, it will be ran by `../run.sh`.
 
-cd $HOME/custom
-echo $$ > etc/run.pid
-args="$@"
-command="~/sources/odoo/odoo-bin -c etc/odoo.tmp.conf  --limit-time-real 99999 $args"
-exec ${command}
-
+custom="$HOME/custom"
+odoo="$HOME/sources/odoo"
+args="$*"
+$odoo/env/bin/python $odoo/odoo-bin -c $custom/etc/odoo.tmp.conf  --limit-time-real 99999 --pidfile=$custom/etc/run.pid $args

@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-#### Written by: Catalin Airimitoaie - catalin@domatix.com
+#### Written by: Cătălin Airimițoaie - catalin@domatix.com
 #### Description: ODM build script. Do not call this script directly, it will be ran by `run.sh` in order to build a new development instance
 
-cd $1
+cd "$1"
 if ! docker image ls | grep "domatix/odoo" | grep "base"; then
-	docker build -t domatix/odoo:base ../../dockerfiles/base
+	docker build -t domatix/odoo:base ../../dockerfiles/base --no-cache
 fi
 
 source .env
